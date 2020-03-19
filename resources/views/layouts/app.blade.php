@@ -52,9 +52,9 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">สุขภาพผู้สูงอายุ</a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="/healthelder/record">บันทึกสุขภาพ</a>
-      <a class="dropdown-item" href="#">บันทึกโรคประจำตัว</a>
-      <a class="dropdown-item" href="#">บันทึกการใช้ยา</a>
-      <a class="dropdown-item" href="#">บันทึกสิทธิการรักษา</a>
+      <a class="dropdown-item" href="/healthelder/diseaserecord">บันทึกโรคประจำตัว</a>
+      <a class="dropdown-item" href="/healthelder/medicinerecord">บันทึกการใช้ยา</a>
+      <a class="dropdown-item" href="/healthelder/rightsrecord">บันทึกสิทธิการรักษา</a>
     </div>
 	</li>
 	<li class="nav-item dropdown">

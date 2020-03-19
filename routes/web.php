@@ -19,4 +19,18 @@ Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::view('/healthelder/record', 'health_record');
+Route::get('/healthelder/record', function () {
+    return view('healthelder.health_record');
+});
+
+Route::get('/healthelder/diseaserecord', function () {
+    return view('healthelder.disease_record');
+});
+
+Route::get('/healthelder/rightsrecord', function () {
+    return view('healthelder.rights_record');
+});
+
+Route::get('/healthelder/medicinerecord', function () {
+    return view('healthelder.medicine_record');
+});

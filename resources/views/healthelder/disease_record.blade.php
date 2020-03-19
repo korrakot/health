@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col-8 align-self-center">
       <h5 style="margin-bottom: -5 ">
-        การบันทึกสุขภาพ
+        บันทึกโรคประจำตัว
       </h5>
       </div>
       <div class="col-4">
@@ -27,12 +27,9 @@
   <thead>
     <tr>
       <th scope="col">ลำดับ</th>
+      <th scope="col">ชื่อโรค</th>
+      <th scope="col">รายละเอียด</th>
       <th scope="col">วันที่บันทึก</th>
-      <th scope="col">น้ำหนัก</th>
-      <th scope="col">ส่วนสูง</th>
-      <th scope="col">ความดัน</th>
-      <th scope="col">สถานภาพ</th>
-      <th scope="col">นัดครั้งต่อไป</th>
       <th scope="col">ดำเนินการ</th>
     </tr>
   </thead>
@@ -42,33 +39,33 @@
       <td>Mark</td>
       <td>Otto</td>
       <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td><button type="button" class="btn btn-warning">Warning</button> <button type="button" class="btn btn-danger">Danger</button></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td><button type="button" class="btn btn-warning">Warning</button> <button type="button" class="btn btn-danger">Danger</button></td>
-      
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
       <td><button type="button" class="btn btn-warning">Warning</button> <button type="button" class="btn btn-danger">Danger</button></td>
     </tr>
   </tbody>
 </table>
+
+<h4>เพิ่มโรคประจำตัว</h4>
+<form>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-4 col-form-label text-right">เลือกโรคประจำตัว :</label>
+    <div class="col-sm-6">
+      <select class="form-control">
+      <option>Default select</option>
+      <option>Default select1</option>
+      <option>Default select2</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-4 col-form-label text-right">รายละเอียด :</label>
+    <div class="col-sm-6">
+      <!-- <input type="password" class="form-control" id="inputPassword" placeholder="Password"> -->
+      <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="รายละเอียด" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="col-12 text-center">
+    <button type="submit" class="btn btn-primary text-right">บันทึก</button>
+  </div>
+</form>
 </div>
 @endsection
