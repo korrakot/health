@@ -60,9 +60,9 @@
 	<li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">การติดตาม</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">การสังเกตอาการ</a>
-      <a class="dropdown-item" href="#">การบันทึกสุขภาพ</a>
-      <a class="dropdown-item" href="#">สถานภาพ</a>
+      <a class="dropdown-item" href="/tracking/observe">การสังเกตอาการ</a>
+      <a class="dropdown-item" href="/tracking/record">การบันทึกสุขภาพ</a>
+      <a class="dropdown-item" href="/tracking/status">สถานภาพ</a>
     </div>
 	</li>
 	<li class="nav-item dropdown">
@@ -76,11 +76,11 @@
 	<li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">ข้อมูลระบบ</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">ผู้สูงอายุ</a>
-      <a class="dropdown-item" href="#">โรคประจำตัว</a>
-      <a class="dropdown-item" href="#">สิทธิการรักษา</a>
-      <a class="dropdown-item" href="#">อาการ</a>
-      <a class="dropdown-item" href="#">ยา</a>
+      <a class="dropdown-item" href="/info/elders">ผู้สูงอายุ</a>
+      <a class="dropdown-item" href="/info/disease">โรคประจำตัว</a>
+      <a class="dropdown-item" href="/info/rights">สิทธิการรักษา</a>
+      <a class="dropdown-item" href="/info/symptom">อาการ</a>
+      <a class="dropdown-item" href="/info/drug">ยา</a>
     </div>
 	</li>
 						

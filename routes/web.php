@@ -21,6 +21,7 @@ Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//healthelder
 Route::get('/healthelder/record', function () {
     return view('healthelder.health_record');
 });
@@ -35,4 +36,39 @@ Route::get('/healthelder/rightsrecord', function () {
 
 Route::get('/healthelder/medicinerecord', function () {
     return view('healthelder.medicine_record');
+});
+
+//tracking
+Route::get('/tracking/observe', function () {
+    return view('tracking.observe');
+});
+
+Route::get('/tracking/record', function () {
+    return view('tracking.record');
+});
+
+Route::get('/tracking/status', function () {
+    return view('tracking.status');
+});
+
+
+//system info
+Route::get('/info/elders', function () {
+    return view('system_info.elders');
+});
+
+Route::get('/info/disease', function () {
+    return view('system_info.disease');
+});
+
+Route::get('/info/rights', function () {
+    return view('system_info.treatment_rights');
+});
+
+Route::get('/info/symptom', function () {
+    return view('system_info.symptom');
+});
+
+Route::get('/info/drug', function () {
+    return view('system_info.drug');
 });
