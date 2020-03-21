@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-8 align-self-center">
         <h5 style="margin-bottom: -5 ">
-        ข้อมูลอาการ
+        ข้อมูลยา
         </h5>
         </div>
         <div class="col-4">
@@ -25,7 +25,7 @@
   <div class="row mb-3">
     <div class="col-10"></div>
     <div class="col-2">
-      <button class="btn btn-outline-secondary w-100" type="button">เพิ่ม</button>
+      <a type="button" href="/medicine/create" class="btn btn-outline-secondary w-100" type="button">เพิ่ม</a>
     </div>
   </div>
   <table class="table">
@@ -38,25 +38,23 @@
     </tr>
   </thead>
   <tbody>
+  @foreach($medicines as $key=>$medicine)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td><button type="button" class="btn btn-warning">แก้ไข</button> <button type="button" class="btn btn-danger">ลบ</button></td>
+      <th scope="row"> {{++$key}} </th>
+      <td>{{$medicine->name}}</td>
+      <td>{{$medicine->detail}}</td>
+      <td>
+        <div class="row" style="justify-content: center">
+          <a type="button" href="{{ route('medicine.edit',$medicine->id)}}" class="mr-2 btn btn-warning">แก้ไข</a>
+          <form action="{{ route('medicine.destroy',$medicine->id)}}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit"class="btn btn-danger">ลบ</button>
+          </form>
+        </div>
+      </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td><button type="button" class="btn btn-warning">แก้ไข</button> <button type="button" class="btn btn-danger">ลบ</button></td>
-      
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td><button type="button" class="btn btn-warning">แก้ไข</button> <button type="button" class="btn btn-danger">ลบ</button></td>
-    </tr>
+    @endforeach
   </tbody>
 </table>
 </div>

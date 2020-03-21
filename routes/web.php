@@ -58,15 +58,6 @@ Route::get('/info/elders', function () {
 });
 
 Route::resource('disease', 'DiseaseController');
-
-Route::get('/info/rights', function () {
-    return view('system_info.treatment_rights');
-});
-
-Route::get('/info/symptom', function () {
-    return view('system_info.symptom');
-});
-
-Route::get('/info/drug', function () {
-    return view('system_info.drug');
-});
+Route::resource('patent', 'PatentsController');
+Route::resource('symptom', 'SymptomController');
+Route::resource('medicine', 'MedicineController');

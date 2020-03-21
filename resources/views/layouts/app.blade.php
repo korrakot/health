@@ -78,9 +78,9 @@
     <div class="dropdown-menu">
       <a class="dropdown-item" href="/info/elders">ผู้สูงอายุ</a>
       <a class="dropdown-item" href="/disease">โรคประจำตัว</a>
-      <a class="dropdown-item" href="/info/rights">สิทธิการรักษา</a>
-      <a class="dropdown-item" href="/info/symptom">อาการ</a>
-      <a class="dropdown-item" href="/info/drug">ยา</a>
+      <a class="dropdown-item" href="/patent">สิทธิการรักษา</a>
+      <a class="dropdown-item" href="/symptom">อาการ</a>
+      <a class="dropdown-item" href="/medicine">ยา</a>
     </div>
 	</li>
 						
