@@ -77,7 +77,7 @@
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">ข้อมูลระบบ</a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="/info/elders">ผู้สูงอายุ</a>
-      <a class="dropdown-item" href="/info/disease">โรคประจำตัว</a>
+      <a class="dropdown-item" href="/disease">โรคประจำตัว</a>
       <a class="dropdown-item" href="/info/rights">สิทธิการรักษา</a>
       <a class="dropdown-item" href="/info/symptom">อาการ</a>
       <a class="dropdown-item" href="/info/drug">ยา</a>

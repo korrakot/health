@@ -25,7 +25,7 @@
   <div class="row mb-3">
     <div class="col-10"></div>
     <div class="col-2">
-      <button class="btn btn-outline-secondary w-100" type="button">เพิ่ม</button>
+      <a type="button" href="/disease/create" class="btn btn-outline-secondary w-100" type="button">เพิ่ม</a>
     </div>
   </div>
   <table class="table">
@@ -34,29 +34,27 @@
       <th scope="col" width="10%">ลำดับ</th>
       <th scope="col" width="20%">ชื่อ</th>
       <th scope="col" width="50%">คำอธิบาย</th>
-      <th scope="col" width="20%">ดำเนินการ</th>
+      <th class="text-center" scope="col" width="20%">ดำเนินการ</th>
     </tr>
   </thead>
   <tbody>
+    @foreach($disease as $key=>$disease1)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td><button type="button" class="btn btn-warning">แก้ไข</button> <button type="button" class="btn btn-danger">ลบ</button></td>
+      <th scope="row"> {{++$key}} </th>
+      <td>{{$disease1->name}}</td>
+      <td>{{$disease1->detail}}</td>
+      <td>
+        <div class="row" style="justify-content: center">
+          <a type="button" href="{{ route('disease.edit',$disease1->id)}}" class="mr-2 btn btn-warning">แก้ไข</a>
+          <form action="{{ route('disease.destroy',$disease1->id)}}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit"class="btn btn-danger">ลบ</button>
+          </form>
+        </div>
+      </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td><button type="button" class="btn btn-warning">แก้ไข</button> <button type="button" class="btn btn-danger">ลบ</button></td>
-      
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td><button type="button" class="btn btn-warning">แก้ไข</button> <button type="button" class="btn btn-danger">ลบ</button></td>
-    </tr>
+    @endforeach    
   </tbody>
 </table>
 </div>

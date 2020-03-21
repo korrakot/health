@@ -57,9 +57,7 @@ Route::get('/info/elders', function () {
     return view('system_info.elders');
 });
 
-Route::get('/info/disease', function () {
-    return view('system_info.disease');
-});
+Route::resource('disease', 'DiseaseController');
 
 Route::get('/info/rights', function () {
     return view('system_info.treatment_rights');
