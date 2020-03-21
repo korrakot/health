@@ -24,10 +24,9 @@
   </br>
   <div class="row mb-3">
     <div class="col-10">
-      <p>name</p>
     </div>
     <div class="col-2">
-      <button class="btn btn-outline-secondary w-100" type="button">เพิ่ม</button>
+      <a type="button" href="/elder/create" class="btn btn-outline-secondary w-100" type="button">เพิ่ม</a>
     </div>
   </div>
   <table class="table">
@@ -35,9 +34,7 @@
     <tr>
       <th scope="col">ลำดับ</th>
       <th scope="col">เลขบัตรประชาชน</th>
-      <th scope="col">คำนำหน้า</th>
-      <th scope="col">ชื่อ</th>
-      <th scope="col">สกุล</th>
+      <th scope="col">ชื่อ - สกุล</th>
       <th scope="col">วันเกิด</th>
       <th scope="col">อายุ</th>
       <th scope="col">ที่อยู่</th>
@@ -47,46 +44,28 @@
     </tr>
   </thead>
   <tbody>
+    @foreach($people as $key=>$personal)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td><button type="button" class="btn btn-warning">แก้ไข</button> <button type="button" class="btn btn-danger">ลบ</button></td>
+      <th scope="row"> {{++$key}} </th>
+      <td> {{$personal->id}} </td>
+      <td>{{$personal->prefix_people}} {{$personal->name_people}} {{$personal->surname_people}}</td>
+      <td>{{$personal->birthday_people}}</td>
+      <td>{{$personal->age_people}}</td>
+      <td>{{$personal->address_people}}</td>
+      <td>{{$personal->$category}}</td>
+      <td>{{$personal->updated_at}}</td>
+      <td>
+        <div class="row" style="justify-content: center">
+          <a type="button" href="{{ route('elder.edit',$personal->id)}}" class="mr-2 btn btn-warning">แก้ไข</a>
+          <form action="{{ route('elder.destroy',$personal->id)}}" method="post">
+            @csrf
+            @method('DELETE')
+            <button type="submit"class="btn btn-danger">ลบ</button>
+          </form>
+        </div>
+      </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td><button type="button" class="btn btn-warning">แก้ไข</button> <button type="button" class="btn btn-danger">ลบ</button></td>
-      
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td><button type="button" class="btn btn-warning">แก้ไข</button> <button type="button" class="btn btn-danger">ลบ</button></td>
-    </tr>
+    @endforeach
   </tbody>
 </table>
 </div>

@@ -12,6 +12,7 @@
 */
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\RedirectResponse;
+use ระบบฐานข้อมูลติดตามสุขภาพผู้สูงอายุในชุมชน\Category;
 
 Route::get('/', function () {
     return view('welcome');
@@ -51,12 +52,8 @@ Route::get('/tracking/status', function () {
     return view('tracking.status');
 });
 
-
 //system info
-Route::get('/info/elders', function () {
-    return view('system_info.elders');
-});
-
+Route::resource('elder', 'PeopleController');
 Route::resource('disease', 'DiseaseController');
 Route::resource('patent', 'PatentsController');
 Route::resource('symptom', 'SymptomController');
