@@ -11,12 +11,14 @@
         </h5>
         </div>
         <div class="col-4">
-          <div class="input-group ">
-            <input type="text" class="form-control" placeholder="เลขบัตรประชาชน" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">ค้นหา</button>
-            </div>           
-          </div>
+          <form action="/search">
+            <div class="input-group ">
+              <input type="search" class="form-control" placeholder="เลขบัตรประชาชน" name="search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">ค้นหา</button>
+              </div>           
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -33,14 +35,14 @@
   <thead>
     <tr>
       <th scope="col">ลำดับ</th>
-      <th scope="col">เลขบัตรประชาชน</th>
-      <th scope="col">ชื่อ - สกุล</th>
+      <th scope="col" width="15%">เลขบัตรประชาชน</th>
+      <th scope="col" width="15%">ชื่อ - สกุล</th>
       <th scope="col">วันเกิด</th>
       <th scope="col">อายุ</th>
-      <th scope="col">ที่อยู่</th>
+      <th scope="col" width="25%">ที่อยู่</th>
       <th scope="col">สถานภาพ</th>
       <th scope="col">บันทึกล่าสุด</th>
-      <th scope="col">ดำเนินการ</th>
+      <th scope="col" width="10%">ดำเนินการ</th>
     </tr>
   </thead>
   <tbody>
@@ -52,7 +54,7 @@
       <td>{{$personal->birthday_people}}</td>
       <td>{{$personal->age_people}}</td>
       <td>{{$personal->address_people}}</td>
-      <td>{{$personal->$category}}</td>
+      <td>{{$personal->name}}</td>
       <td>{{$personal->updated_at}}</td>
       <td>
         <div class="row" style="justify-content: center">

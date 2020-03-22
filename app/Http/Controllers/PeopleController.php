@@ -17,13 +17,13 @@ class PeopleController extends Controller
 
     public function index()
     {
-        $people = People::all();
-        $category = DB::table('people')
-                ->join('categories', 'people.category_id', '=', 'categories.id')
-                ->select('name')
-                ->get();
 
-        return view('system_info.elder.index', compact('people', 'category'));
+        $people = Category::join('people', 'people.category_id', '=', 'categories.id')
+        ->select('categories.name', 'people.*')
+        ->get();
+
+        // dd($people);
+        return view('system_info.elder.index', compact('people'));
     }
 
     /**

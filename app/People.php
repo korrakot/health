@@ -22,4 +22,8 @@ class People extends Model
         'age_people',
         'category_id',
       ];
+
+      public function category() {
+        return $this->belongsTo(Category::class);
+      }
 }
