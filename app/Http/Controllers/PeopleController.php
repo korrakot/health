@@ -20,7 +20,7 @@ class PeopleController extends Controller
 
         $people = Category::join('people', 'people.category_id', '=', 'categories.id')
         ->select('categories.name', 'people.*')
-        ->get();
+        ->paginate(10);
 
         // dd($people);
         return view('system_info.elder.index', compact('people'));
@@ -37,6 +37,17 @@ class PeopleController extends Controller
         return view('system_info.elder.create', compact('category'));
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $people = DB::table('people')
+        ->join('categories', 'people.category_id', '=', 'categories.id')
+        ->where('people.id', '=', $search)
+        ->select('categories.name', 'people.*')
+        ->get();
+        return view('system_info.elder.index', ['people' => $people]);
+
+    }
     /**
      * Store a newly created resource in storage.
      *

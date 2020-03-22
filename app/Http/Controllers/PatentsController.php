@@ -3,6 +3,7 @@
 namespace ระบบฐานข้อมูลติดตามสุขภาพผู้สูงอายุในชุมชน\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use ระบบฐานข้อมูลติดตามสุขภาพผู้สูงอายุในชุมชน\Patent;
 
 class PatentsController extends Controller
@@ -26,6 +27,15 @@ class PatentsController extends Controller
     public function create()
     {
         return view('system_info.patents.create');
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $patents = DB::table('patents')
+        ->where('name', 'like', '%' .$search. '%')
+        ->get();
+        return view('system_info.patents.index', ['patents' => $patents]);
     }
 
     /**

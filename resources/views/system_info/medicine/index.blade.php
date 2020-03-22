@@ -11,12 +11,14 @@
         </h5>
         </div>
         <div class="col-4">
-          <div class="input-group ">
-            <input type="text" class="form-control" placeholder="คำที่ต้องการค้นหา" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">ค้นหา</button>
-            </div>           
-          </div>
+          <form action="/searchmedicine">
+            <div class="input-group ">
+              <input type="search" class="form-control" placeholder="คำที่ต้องการค้นหา" name="search">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">ค้นหา</button>
+              </div>           
+            </div>
+          </form>
         </div>
       </div>
     </div>

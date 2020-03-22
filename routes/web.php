@@ -54,7 +54,16 @@ Route::get('/tracking/status', function () {
 
 //system info
 Route::resource('elder', 'PeopleController');
+Route::get('/search', 'PeopleController@search');
+
 Route::resource('disease', 'DiseaseController');
+Route::get('/searchdisease', 'DiseaseController@search');
+
 Route::resource('patent', 'PatentsController');
+Route::get('/searchpatent', 'PatentsController@search');
+
 Route::resource('symptom', 'SymptomController');
+Route::get('/searchsymptom', 'SymptomController@search');
+
 Route::resource('medicine', 'MedicineController');
+Route::get('/searchmedicine', 'MedicineController@search');

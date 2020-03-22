@@ -3,6 +3,7 @@
 namespace ระบบฐานข้อมูลติดตามสุขภาพผู้สูงอายุในชุมชน\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use ระบบฐานข้อมูลติดตามสุขภาพผู้สูงอายุในชุมชน\Symptom;
 
 class SymptomController extends Controller
@@ -26,6 +27,16 @@ class SymptomController extends Controller
     public function create()
     {
         return view('system_info.symptom.create');
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+        $symptoms = DB::table('symptoms')
+        ->where('name', 'like', '%' .$search. '%')
+        ->get();
+        return view('system_info.symptom.index', ['symptoms' => $symptoms]);
+
     }
 
     /**
